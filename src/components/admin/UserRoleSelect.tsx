@@ -43,7 +43,7 @@ export default function UserRoleSelect({
           <select
             value={role}
             onChange={(e) => setRole(e.target.value as UserRole)}
-            className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+            className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
           >
             {ROLE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -64,7 +64,7 @@ export default function UserRoleSelect({
           <button
             onClick={handleSave}
             disabled={saving}
-            className="px-4 py-2 bg-uabc-green text-white rounded hover:opacity-90 disabled:opacity-50"
+            className="px-4 py-2 bg-[#007A33] text-white rounded hover:opacity-90 disabled:opacity-50"
           >
             {saving ? 'Guardando...' : 'Guardar'}
           </button>

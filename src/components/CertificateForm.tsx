@@ -210,14 +210,14 @@ export default function CertificateForm(){
                 </>) : 'Selecciona un archivo PDF o imagen.'}
               </div>
               <div>
-                <button type="button" onClick={onPick} className="rounded-xl bg-(--uabc-green) text-white px-4 py-2 hover:bg-(--uabc-ochre) focus:outline-none focus:ring-2 focus:ring-(--uabc-ochre)">Elegir archivo</button>
+                <button type="button" onClick={onPick} className="rounded-xl bg-[#007A33] text-white px-4 py-2 hover:bg-[#CC8A00] focus:outline-none focus:ring-2 focus:ring-(--uabc-ochre)">Elegir archivo</button>
                 <input ref={inputRef} type="file" accept={ALLOWED.join(',')} hidden onChange={(e)=>onFile(e.target.files?.[0])}/>
               </div>
             </div>
             {file && (
               <div className="mt-3">
                 <div className="h-2 w-full rounded bg-slate-200 overflow-hidden">
-                  <div className="h-2 rounded bg-linear-to-r from-(--uabc-green) via-(--uabc-ochre) to-(--uabc-green) animate-[progress_1.4s_ease_infinite]" style={{ width: `${Math.max(8,progress)}%` }} />
+                  <div className="h-2 rounded bg-gradient-to-r from-[#007A33] via-[#CC8A00] to-[#007A33] animate-[progress_1.4s_ease_infinite]" style={{ width: `${Math.max(8,progress)}%` }} />
                 </div>
               </div>
             )}
@@ -227,7 +227,7 @@ export default function CertificateForm(){
       </div>
 
       <div className="pt-2">
-        <button type="submit" disabled={!canSubmit} className="rounded-xl bg-(--uabc-green) text-white px-5 py-2.5 hover:bg-(--uabc-ochre) disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-(--uabc-ochre)">Guardar certificado</button>
+        <button type="submit" disabled={!canSubmit} className="rounded-xl bg-[#007A33] text-white px-5 py-2.5 hover:bg-[#CC8A00] disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-(--uabc-ochre)">Guardar certificado</button>
       </div>
 
       <style>{`@keyframes progress { 0%{filter:hue-rotate(0)} 100%{filter:hue-rotate(360deg)} }`}</style>

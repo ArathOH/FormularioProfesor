@@ -28,7 +28,7 @@ export default function AvatarB64Uploader({ value, onChange }:{ value?: string; 
           {value ? <img src={value} alt="Avatar" className="h-full w-full object-cover"/> : null}
         </div>
         <div className="grid gap-2">
-          <button type="button" onClick={pick} className="rounded-xl bg-(--uabc-green) text-white px-3 py-1.5 hover:bg-(--uabc-ochre) focus:outline-none focus:ring-2 focus:ring-(--uabc-ochre)">Cambiar foto</button>
+          <button type="button" onClick={pick} className="rounded-xl bg-[#007A33] text-white px-3 py-1.5 hover:bg-[#CC8A00] focus:outline-none focus:ring-2 focus:ring-(--uabc-ochre)">Cambiar foto</button>
           <input ref={inputRef} type="file" accept="image/*" hidden onChange={(e)=>onFile(e.target.files?.[0])}/>
           <p className="text-xs text-slate-500">Recomendado: 256×256, &lt; 200 KB</p>
           {err && <p className="text-xs text-red-600">{err}</p>}

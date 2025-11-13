@@ -36,7 +36,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             setUserRole('invitado')
           }
         } catch (err) {
-          console.error('Error al obtener rol del usuario:', err)
           setUserRole('invitado')
         }
       } else {

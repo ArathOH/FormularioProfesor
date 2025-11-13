@@ -160,7 +160,7 @@ export default function Reports() {
         <h1 className="text-2xl font-bold">Reportes Estadísticos</h1>
         <button
           onClick={handleExport}
-          className="rounded-xl bg-(--uabc-green) text-white px-4 py-2 hover:bg-(--uabc-ochre) focus:outline-none focus:ring-2 focus:ring-(--uabc-ochre)"
+          className="rounded-xl bg-[#007A33] text-white px-4 py-2 hover:bg-[#CC8A00] focus:outline-none focus:ring-2 focus:ring-(--uabc-ochre)"
         >
           Exportar CSV
         </button>

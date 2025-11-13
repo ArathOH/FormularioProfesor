@@ -25,7 +25,7 @@ function Avatar({ name, photoURL }: { name?: string | null; photoURL?: string | 
   }
   const initials = (name || 'U').split(' ').map(p=>p[0]).slice(0,2).join('').toUpperCase()
   return (
-    <div className="h-9 w-9 rounded-full grid place-items-center bg-[var(--uabc-green)] text-white text-sm font-semibold">
+    <div className="h-9 w-9 rounded-full grid place-items-center bg-[#007A33] text-white text-sm font-semibold">
       {initials}
     </div>
   )
@@ -62,8 +62,8 @@ export default function NavBar(){
   }, [])
 
   const baseLink = 'px-3 py-2 rounded-lg text-sm font-medium transition-colors'
-  const activeLink = 'text-[var(--uabc-green)] underline decoration-[var(--uabc-ochre)] underline-offset-4'
-  const inactiveLink = 'text-slate-600 hover:text-[var(--uabc-ochre)] '
+  const activeLink = 'text-[#007A33] underline decoration-[#CC8A00] underline-offset-4'
+  const inactiveLink = 'text-slate-600 hover:text-[#CC8A00] '
 
   const items = user 
     ? navItemsAuth.filter(item => !item.adminOnly || isAdmin(userRole || undefined))
@@ -75,7 +75,7 @@ export default function NavBar(){
       scrolled && 'shadow-sm'
     )}>
       {/* Skip link accesible */}
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-[var(--uabc-ochre)] text-white rounded px-3 py-1">Saltar al contenido</a>
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-[#CC8A00] text-white rounded px-3 py-1">Saltar al contenido</a>
 
       <nav className="max-w-6xl mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
@@ -105,7 +105,7 @@ export default function NavBar(){
               <div className="relative" ref={userRef}>
                 <button
                   onClick={()=>setUserOpen(v=>!v)}
-                  className="flex items-center gap-2 rounded-xl px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)]"
+                  className="flex items-center gap-2 rounded-xl px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[#CC8A00]"
                   aria-haspopup="menu"
                   aria-expanded={userOpen}
                 >
@@ -121,12 +121,12 @@ export default function NavBar(){
                 )}
               </div>
             ) : (
-              <Link to="/login" className="inline-flex items-center rounded-xl bg-[var(--uabc-green)] px-4 py-2 text-white hover:bg-[var(--uabc-ochre)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--uabc-ochre)]">Entrar</Link>
+              <Link to="/login" className="inline-flex items-center rounded-xl bg-[#007A33] px-4 py-2 text-white hover:bg-[#CC8A00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#CC8A00]">Entrar</Link>
             )}
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden inline-flex items-center justify-center rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)]"
+              className="md:hidden inline-flex items-center justify-center rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#CC8A00]"
               aria-label="Abrir menú"
               aria-controls="mobile-menu"
               aria-expanded={open}
@@ -144,7 +144,7 @@ export default function NavBar(){
               <NavLink key={to} to={to} className={({isActive}) => cls('block rounded-lg px-3 py-2 text-sm', isActive ? activeLink : 'text-slate-700 hover:bg-slate-50')}>{label}</NavLink>
             ))}
             {!loading && !user && (
-              <Link to="/login" className="block rounded-lg px-3 py-2 text-sm bg-[var(--uabc-green)] text-white hover:bg-[var(--uabc-ochre)]">Entrar</Link>
+              <Link to="/login" className="block rounded-lg px-3 py-2 text-sm bg-[#007A33] text-white hover:bg-[#CC8A00]">Entrar</Link>
             )}
             {user && (
               <button onClick={logout} className="block w-full text-left rounded-lg px-3 py-2 text-sm text-red-600 hover:bg-red-50">Salir</button>

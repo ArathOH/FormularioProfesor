@@ -248,8 +248,15 @@ Este es un proyecto académico para UABC. Las contribuciones deben seguir:
 
 ## 📄 Licencia
 
-Proyecto académico - UABC © 2024
+Proyecto académico - © 2025 Arath Olmedo (@ArathOH)  
+Desarrollado para la Universidad Autónoma de Baja California (UABC)
+
+## 👥 Autor
+
+**Arath Olmedo**  
+GitHub: [@ArathOH](https://github.com/ArathOH)  
+Email: arath.olmedo@hotmail.com
 
 ---
 
-**Desarrollado con 💚💛 para la Universidad Autónoma de Baja California**
+**Desarrollado con 💚💛 para la Universidad Autónoma de Baja California (UABC)**

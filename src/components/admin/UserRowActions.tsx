@@ -26,7 +26,7 @@ export default function UserRowActions({
       </button>
       <button
         onClick={onChangeRole}
-        className="text-sm text-uabc-green hover:underline"
+        className="text-sm text-[#007A33] hover:underline"
         title="Cambiar rol"
       >
         Rol

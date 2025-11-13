@@ -77,7 +77,6 @@ export default function Admin() {
       setLastDoc(hasMoreData ? displayDocs[displayDocs.length - 1] : null)
       setHasMore(hasMoreData)
     } catch (err) {
-      console.error(err)
       alert('Error al cargar usuarios')
     } finally {
       setLoading(false)
@@ -114,7 +113,6 @@ export default function Admin() {
       alert('Usuario eliminado correctamente')
       loadUsers(null)
     } catch (err) {
-      console.error(err)
       alert('Error al eliminar usuario: ' + (err as Error).message)
     }
   }
@@ -129,7 +127,6 @@ export default function Admin() {
         setSelectedForDetail({ ...selectedForDetail })
       }
     } catch (err) {
-      console.error(err)
       alert('Error al eliminar certificado: ' + (err as Error).message)
     }
   }
@@ -165,7 +162,7 @@ export default function Admin() {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 text-uabc-green">
+        <h1 className="text-3xl font-bold mb-6 text-[#007A33]">
           Panel de Administración
         </h1>
 
@@ -195,7 +192,7 @@ export default function Admin() {
               <div className="mt-4 text-center">
                 <button
                   onClick={loadNext}
-                  className="px-4 py-2 bg-uabc-green text-white rounded hover:opacity-90"
+                  className="px-4 py-2 bg-[#007A33] text-white rounded hover:opacity-90"
                 >
                   Cargar más usuarios
                 </button>

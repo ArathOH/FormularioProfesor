@@ -35,7 +35,6 @@ export default function UserDetail({
       const list = snap.docs.map((d) => ({ ...d.data(), id: d.id } as Certificate))
       setCerts(list)
     } catch (err) {
-      console.error(err)
       alert('Error al cargar certificados')
     } finally {
       setLoading(false)

@@ -27,7 +27,7 @@ export default function Certificates(){
   return (
     <section className="grid gap-6">
       <header className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold text-(--uabc-green)">Certificados</h1>
+        <h1 className="text-2xl font-bold text-[#007A33]">Certificados</h1>
         <p className="text-sm text-slate-600">Registra, filtra y descarga tus certificados docentes.</p>
       </header>
 

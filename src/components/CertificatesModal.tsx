@@ -124,7 +124,7 @@ export default function CertificatesModal({ user, onClose }: Props) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-[var(--uabc-green)] to-[var(--uabc-ochre)] text-white px-6 py-4">
+        <div className="bg-gradient-to-r from-[#007A33] to-[#CC8A00] text-white px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold">{user.nombre}</h2>
@@ -150,14 +150,14 @@ export default function CertificatesModal({ user, onClose }: Props) {
               value={filters.search}
               onChange={(e) => setFilters({ ...filters, search: e.target.value })}
               placeholder="Buscar por título..."
-              className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)]"
+              className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#CC8A00]"
             />
 
             {/* Semestre */}
             <select
               value={filters.semestre}
               onChange={(e) => setFilters({ ...filters, semestre: e.target.value as any })}
-              className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)]"
+              className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#CC8A00]"
             >
               <option value="all">Todos los semestres</option>
               <option value="spring">Primavera (Ene-Jun)</option>
@@ -168,7 +168,7 @@ export default function CertificatesModal({ user, onClose }: Props) {
             <select
               value={filters.sortBy}
               onChange={(e) => setFilters({ ...filters, sortBy: e.target.value as any })}
-              className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)]"
+              className="rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#CC8A00]"
             >
               <option value="date-desc">Más reciente primero</option>
               <option value="date-asc">Más antiguo primero</option>
@@ -182,7 +182,7 @@ export default function CertificatesModal({ user, onClose }: Props) {
           {loading ? (
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
-                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[var(--uabc-green)] border-r-transparent"></div>
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#007A33] border-r-transparent"></div>
                 <p className="mt-2 text-sm text-slate-600">Cargando certificados...</p>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function CertificatesModal({ user, onClose }: Props) {
                       {cert.hours && <span>• {cert.hours}h</span>}
                     </div>
                     {cert.type && (
-                      <span className="inline-block text-xs px-2 py-1 rounded-full bg-(--uabc-green)/10 text-(--uabc-green)">
+                      <span className="inline-block text-xs px-2 py-1 rounded-full bg-[#007A33]/10 text-[#007A33]">
                         {cert.type}
                       </span>
                     )}
@@ -229,7 +229,7 @@ export default function CertificatesModal({ user, onClose }: Props) {
                     <div className="flex gap-2 pt-2">
                       <button
                         onClick={() => handleDownload(cert.data, cert.fileName)}
-                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium bg-(--uabc-green) text-white hover:bg-(--uabc-ochre) transition-colors"
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium bg-[#007A33] text-white hover:bg-[#CC8A00] transition-colors"
                       >
                         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

@@ -110,7 +110,6 @@ export default function CertEditModal({
       onSaved()
       onClose()
     } catch (err) {
-      console.error(err)
       alert('Error al actualizar: ' + (err as Error).message)
     } finally {
       setSaving(false)
@@ -148,7 +147,7 @@ export default function CertEditModal({
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             />
           </label>
 
@@ -157,7 +156,7 @@ export default function CertEditModal({
             <select
               value={type}
               onChange={(e) => setType(e.target.value as CertificateType)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             >
               {CERT_TYPES.map((t) => (
                 <option key={t.value} value={t.value}>
@@ -176,7 +175,7 @@ export default function CertEditModal({
                 type="text"
                 value={typeOther}
                 onChange={(e) => setTypeOther(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
               />
             </label>
           )}
@@ -188,7 +187,7 @@ export default function CertEditModal({
             <select
               value={department}
               onChange={(e) => setDepartment(e.target.value as DepartmentType)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             >
               {DEPARTMENTS.map((d) => (
                 <option key={d.value} value={d.value}>
@@ -207,7 +206,7 @@ export default function CertEditModal({
                 type="text"
                 value={departmentOther}
                 onChange={(e) => setDepartmentOther(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
               />
             </label>
           )}
@@ -220,7 +219,7 @@ export default function CertEditModal({
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             />
           </label>
 
@@ -230,7 +229,7 @@ export default function CertEditModal({
               type="text"
               value={issuer}
               onChange={(e) => setIssuer(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             />
           </label>
 
@@ -239,7 +238,7 @@ export default function CertEditModal({
             <select
               value={modality}
               onChange={(e) => setModality(e.target.value as any)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             >
               <option value="presencial">Presencial</option>
               <option value="en-linea">En línea</option>
@@ -253,7 +252,7 @@ export default function CertEditModal({
               type="number"
               value={hours}
               onChange={(e) => setHours(parseInt(e.target.value) || 0)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             />
           </label>
 
@@ -265,7 +264,7 @@ export default function CertEditModal({
               <select
                 value={semesterTerm}
                 onChange={(e) => setSemesterTerm(e.target.value as SemesterTerm)}
-                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
               >
                 <option value="ene-jun">Ene-Jun</option>
                 <option value="jul-dic">Jul-Dic</option>
@@ -278,7 +277,7 @@ export default function CertEditModal({
                 type="number"
                 value={year}
                 onChange={(e) => setYear(parseInt(e.target.value) || new Date().getFullYear())}
-                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+                className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
               />
             </label>
           </div>
@@ -291,7 +290,7 @@ export default function CertEditModal({
               type="date"
               value={issuedOn}
               onChange={(e) => setIssuedOn(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-uabc-green"
+              className="mt-1 block w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#007A33]"
             />
           </label>
 
@@ -326,7 +325,7 @@ export default function CertEditModal({
           <button
             onClick={handleSave}
             disabled={saving}
-            className="px-4 py-2 bg-uabc-green text-white rounded hover:opacity-90 disabled:opacity-50"
+            className="px-4 py-2 bg-[#007A33] text-white rounded hover:opacity-90 disabled:opacity-50"
           >
             {saving ? 'Guardando...' : 'Guardar cambios'}
           </button>

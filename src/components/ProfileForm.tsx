@@ -105,10 +105,10 @@ export default function ProfileForm(){
 
       <div className="flex items-center gap-3">
         <button type="submit" disabled={!canSave || saving}
-          className="inline-flex items-center rounded-xl bg-(--uabc-green) text-white px-5 py-2.5 hover:bg-(--uabc-ochre) disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-(--uabc-ochre)">
+          className="inline-flex items-center rounded-xl bg-[#007A33] text-white px-5 py-2.5 hover:bg-[#CC8A00] disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-(--uabc-ochre)">
           {saving? 'Guardando…' : 'Guardar cambios'}
         </button>
-        <button type="button" onClick={()=>window.location.reload()} className="rounded-xl border px-5 py-2.5 hover:border-(--uabc-ochre)">Cancelar</button>
+        <button type="button" onClick={()=>window.location.reload()} className="rounded-xl border px-5 py-2.5 hover:border-[#CC8A00]">Cancelar</button>
       </div>
     </form>
   )

@@ -43,7 +43,7 @@ export default function Uploads(){
             value={q}
             onChange={e=>setQ(e.target.value)}
             placeholder="Buscar por nombre…"
-            className="w-64 rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)]"
+            className="w-64 rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#CC8A00]"
           />
         </div>
       </header>
@@ -52,7 +52,7 @@ export default function Uploads(){
       <div className="flex flex-wrap items-center gap-2">
         {tabs.map(t => (
           <button key={t.key} onClick={()=>setView(t.key)}
-            className={`rounded-full px-3 py-1.5 text-sm border ${view===t.key? 'bg-[var(--uabc-green)] text-white border-[var(--uabc-green)]' : 'bg-white hover:border-[var(--uabc-ochre)]'}`}
+            className={`rounded-full px-3 py-1.5 text-sm border ${view===t.key? 'bg-[#007A33] text-white border-[#007A33]' : 'bg-white hover:border-[#CC8A00]'}`}
           >{t.label}</button>
         ))}
       </div>

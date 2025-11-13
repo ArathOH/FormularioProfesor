@@ -14,7 +14,7 @@ export default function DeptBarChart({ data }: Props) {
           <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={12} />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="count" fill="var(--uabc-green)" />
+          <Bar dataKey="count" fill="#007A33" />
         </BarChart>
       </ResponsiveContainer>
     </div>

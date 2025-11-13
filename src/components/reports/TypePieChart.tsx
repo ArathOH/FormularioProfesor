@@ -5,8 +5,8 @@ type Props = {
 }
 
 const COLORS = [
-  'var(--uabc-green)',
-  'var(--uabc-ochre)',
+  '#007A33',
+  '#CC8A00',
   '#00a651',
   '#e69800',
   '#006e29',

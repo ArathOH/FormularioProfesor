@@ -17,12 +17,10 @@ export default function UsersTable() {
       if (user) {
         // Verificar si el usuario es admin
         try {
-          const userDoc = await getDoc(doc(db, 'users', user.uid))
-          const userData = userDoc.data()
-          // Verificación de rol admin (ya no se necesita guardar en estado)
-          console.log('Rol de usuario:', userData?.role)
+          await getDoc(doc(db, 'users', user.uid))
+          // Verificación de rol admin
         } catch (err) {
-          console.error('Error verificando rol admin:', err)
+          // Error verificando rol admin
         }
         loadUsers()
       } else {
@@ -36,16 +34,12 @@ export default function UsersTable() {
   const loadUsers = async () => {
     try {
       setError(null)
-      console.log('🔄 Cargando usuarios...')
-      console.log('👤 Usuario actual:', auth.currentUser?.email)
       
-      // 1. Obtener todos los usuarios
       const usersSnap = await getDocs(collection(db, 'users'))
-      console.log('✅ Usuarios obtenidos:', usersSnap.size)
       
       const usersData: UserWithCertificates[] = []
 
-      // 2. Para cada usuario, contar certificados
+      // Para cada usuario, contar certificados
       for (const userDoc of usersSnap.docs) {
         const userData = userDoc.data()
         
@@ -63,7 +57,6 @@ export default function UsersTable() {
           })
         } catch (certErr) {
           // Si no tiene permisos para ver certificados de este usuario, poner 0
-          console.warn(`No se pudieron cargar certificados para ${userData.email}:`, certErr)
           usersData.push({
             uid: userDoc.id,
             nombre: userData.nombre || 'Sin nombre',
@@ -73,10 +66,9 @@ export default function UsersTable() {
         }
       }
 
-      console.log('✅ Total usuarios cargados:', usersData.length)
       setUsers(usersData)
     } catch (err) {
-      console.error('❌ Error loading users:', err)
+      // Error loading users
       setError('Error al cargar usuarios. Verifica tus permisos en Firebase.')
     } finally {
       setLoading(false)
@@ -93,7 +85,7 @@ export default function UsersTable() {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[var(--uabc-green)] border-r-transparent"></div>
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#007A33] border-r-transparent"></div>
           <p className="mt-2 text-sm text-slate-600">Cargando usuarios...</p>
         </div>
       </div>
@@ -114,7 +106,7 @@ export default function UsersTable() {
           </p>
           <button
             onClick={loadUsers}
-            className="mt-4 rounded-lg px-4 py-2 text-sm font-medium bg-[var(--uabc-green)] text-white hover:bg-[var(--uabc-ochre)] transition-colors"
+            className="mt-4 rounded-lg px-4 py-2 text-sm font-medium bg-[#007A33] text-white hover:bg-[#CC8A00] transition-colors"
           >
             Reintentar
           </button>
@@ -137,7 +129,7 @@ export default function UsersTable() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Buscar por nombre o correo..."
-              className="w-full rounded-xl border border-slate-300 pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--uabc-ochre)] focus:border-transparent"
+              className="w-full rounded-xl border border-slate-300 pl-10 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#CC8A00] focus:border-transparent"
             />
           </div>
         </div>
@@ -146,7 +138,7 @@ export default function UsersTable() {
         <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-[var(--uabc-green)] text-white">
+              <thead className="bg-[#007A33] text-white">
                 <tr>
                   <th className="px-6 py-3 text-left text-sm font-semibold">Nombre</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold">Correo electrónico</th>
@@ -166,7 +158,7 @@ export default function UsersTable() {
                     <tr key={user.uid} className="hover:bg-slate-50 transition-colors">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-full bg-[var(--uabc-green)]/10 flex items-center justify-center text-[var(--uabc-green)] font-semibold">
+                          <div className="h-10 w-10 rounded-full bg-[#007A33]/10 flex items-center justify-center text-[#007A33] font-semibold">
                             {user.nombre.charAt(0).toUpperCase()}
                           </div>
                           <span className="font-medium text-slate-900">{user.nombre}</span>
@@ -174,7 +166,7 @@ export default function UsersTable() {
                       </td>
                       <td className="px-6 py-4 text-slate-600">{user.email}</td>
                       <td className="px-6 py-4 text-center">
-                        <span className="inline-flex items-center rounded-full bg-[var(--uabc-ochre)]/10 px-3 py-1 text-sm font-medium text-[var(--uabc-ochre)]">
+                        <span className="inline-flex items-center rounded-full bg-[#CC8A00]/10 px-3 py-1 text-sm font-medium text-[#CC8A00]">
                           {user.certificatesCount}
                         </span>
                       </td>
@@ -182,7 +174,7 @@ export default function UsersTable() {
                         <button
                           onClick={() => setSelectedUser(user)}
                           disabled={user.certificatesCount === 0}
-                          className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium bg-[var(--uabc-green)] text-white hover:bg-[var(--uabc-ochre)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium bg-[#007A33] text-white hover:bg-[#CC8A00] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
