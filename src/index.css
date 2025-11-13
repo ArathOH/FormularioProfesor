@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root{
+  --uabc-green: #007A33; /* Pantone 356C (aprox) */
+  --uabc-ochre: #CC8A00; /* Pantone 131C (aprox) */
+}
